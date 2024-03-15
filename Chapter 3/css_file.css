@@ -1,0 +1,19 @@
+    .image-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin: 20px;
+    }
+
+    .image-container img {
+      width: 300px;
+      margin: 20px;
+      border-radius: 5px;
+      filter: sepia(50%); /* Adjust filter intensity as needed */
+    }
+
+    .image-info {
+      text-align: center;
+      font-style: italic;
+      font-size: 0.8rem;
+    }

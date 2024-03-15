@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Petrol Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #666;
+    }
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      transition: border-color 0.3s ease;
+    }
+    input[type="number"]:focus {
+      border-color: #007bff;
+    }
+    button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    p {
+      margin-top: 20px;
+      font-size: 18px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Petrol Calculator</h1>
+    <form id="petrolForm">
+      <label for="costPerLiter">Cost of petrol per liter:</label>
+      <input type="number" id="costPerLiter" name="costPerLiter" step="0.01" min="0" value="1.72">
+      <label for="litersPurchased">Number of liters purchased:</label>
+      <input type="number" id="litersPurchased" name="litersPurchased" step="0.01" min="0" value="0">
+      <button type="button" onclick="calculateTotal()">Calculate Total Cost</button>
+    </form>
+    <p id="totalCost"></p>
+  </div>
+
+  <script>
+    function calculateTotal() {
+      var costPerLiter = parseFloat(document.getElementById("costPerLiter").value);
+      var litersPurchased = parseFloat(document.getElementById("litersPurchased").value);
+      var totalCost = costPerLiter * litersPurchased;
+      document.getElementById("totalCost").innerText = "Total Cost: $" + totalCost.toFixed(2);
+    }
+  </script>
+</body>
+</html>
